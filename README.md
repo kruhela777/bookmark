@@ -1,25 +1,13 @@
-Smart Bookmark App
+📌 Smart Bookmark App
 
-A modern, production-ready bookmark management web application built with Next.js, Supabase Authentication, and Tailwind CSS.
+A modern, production-ready bookmark management web application built with Next.js, Supabase Authentication, Google OAuth, and Tailwind CSS.
 
-This project was developed as part of a technical screening task to demonstrate:
-
-Authentication flow implementation
-
-Production deployment handling
-
-OAuth integration
-
-Secure environment configuration
-
-Clean UI/UX implementation
-
-Proper redirect handling in development & production
+This project was developed as part of a technical screening task to demonstrate real-world authentication flow, deployment handling, OAuth integration, and secure environment configuration.
 
 🚀 Live Demo
 
 🔗 Production URL:
-https://bookmark-9lzc.vercel.app/
+👉 https://bookmark-9lzc.vercel.app/
 
 🛠 Tech Stack
 
@@ -54,11 +42,11 @@ Protected route
 
 Session-based access control
 
-Redirect if unauthenticated
+Automatic redirect if unauthenticated
 
 🎨 Modern UI
 
-Clean glassmorphism design
+Glassmorphism UI design
 
 Responsive layout
 
@@ -74,7 +62,7 @@ Environment variable configuration
 
 Deployed on Vercel
 
-Supabase URL configuration handled correctly
+Supabase URL configured correctly
 
 🔄 Authentication Flow
 
@@ -88,75 +76,63 @@ Redirected to Supabase
 
 Supabase returns session to /auth/callback
 
-User redirected to Dashboard
+User is redirected to Dashboard
 
 🔁 Dynamic Redirect Handling
 
-Instead of hardcoding localhost, we used:
+Instead of hardcoding localhost, the app uses:
 
 redirectTo: `${window.location.origin}/auth/callback`
 
-
-This ensures:
+✅ This ensures:
 
 Works in local development (localhost)
 
-Works in production (Vercel URL)
+Works in production (Vercel)
 
 No environment mismatch issues
 
 ⚙️ Environment Configuration
-Supabase Configuration
-1️⃣ Site URL
-
-Set to:
-
+1️⃣ Supabase Site URL
 https://bookmark-9lzc.vercel.app/
 
-2️⃣ Redirect URLs
-
-Added:
-
+2️⃣ Redirect URLs Added in Supabase
 http://localhost:3000/auth/callback
 https://bookmark-9lzc.vercel.app/auth/callback
 
-3️⃣ Google OAuth
-
-Authorized Redirect URI configured as:
-
+3️⃣ Google OAuth Authorized Redirect URI
 https://rjpsegsncyrtulzxqlfd.supabase.co/auth/v1/callback
 
 🖥 Local Development Setup
 1️⃣ Clone Repository
 git clone https://github.com/kruhela777/bookmark.git
-git clone 
 cd bookmark
 
 2️⃣ Install Dependencies
 npm install
 
 3️⃣ Create .env.local
-NEXT_PUBLIC_SUPABASE_URL
-NEXT_PUBLIC_SUPABASE_ANON_KEY
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_anon_key
 
 4️⃣ Run Development Server
 npm run dev
 
 
-Visit:
-
-https://bookmark-9lzc.vercel.app/
+Open in browser:
+👉 http://localhost:3000
 
 🚀 Deployment Process
-Connected GitHub to Vercel
 
-Each push to main triggers automatic deployment.
+Connected GitHub repository to Vercel
+
+Each push to main triggers automatic deployment
 
 Production Checklist
 
 Node version locked (24.x)
 
-React version compatible with Next.js
+React version aligned with Next.js
 
 Environment variables added in Vercel
 
@@ -167,17 +143,17 @@ Redirect URLs configured
 Dynamic OAuth redirect implemented
 
 🧠 Challenges Faced & Solutions
-❌ Issue: OAuth redirecting to localhost in production
+❌ OAuth redirecting to localhost in production
 
 Cause: Hardcoded redirect URL
 Solution: Used dynamic origin-based redirect
 
-❌ Issue: Supabase production misconfiguration
+❌ Supabase production misconfiguration
 
 Cause: Site URL still pointing to localhost
-Solution: Updated Supabase URL Configuration
+Solution: Updated Supabase Site URL
 
-❌ Issue: Deployment build concerns
+❌ Deployment build issues
 
 Cause: Version mismatches & environment setup
 Solution: Locked Node version and aligned dependencies
@@ -187,7 +163,7 @@ app/
  ├── page.tsx
  ├── dashboard/
  ├── auth/
- │    └── callback/
+ │   └── callback/
 lib/
  └── supabaseClient.ts
 
@@ -203,19 +179,23 @@ Production redirect properly validated
 
 📈 Future Improvements
 
-Add bookmark CRUD functionality
+Bookmark CRUD functionality
 
-Add folder categorization
+Folder categorization
 
-Add search & filtering
+Search & filtering
 
-Add user profile page
+User profile page
 
-Add bookmark sharing feature
+Bookmark sharing
 
-Add rate limiting & middleware protection
+Rate limiting & middleware protection
 
 👩‍💻 Author
 
 Kritika Ruhela
 Full Stack Developer
+
+🌐 Portfolio: https://kruhela.tech/
+
+🔗 GitHub: https://github.com/kruhela777
