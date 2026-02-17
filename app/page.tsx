@@ -4,13 +4,14 @@ import { supabase } from "@/lib/supabaseClient";
 
 export default function Home() {
   const handleLogin = async () => {
-    await supabase.auth.signInWithOAuth({
-      provider: "google",
-      options: {
-        redirectTo: "http://localhost:3000/auth/callback",
-      },
-    });
-  };
+  await supabase.auth.signInWithOAuth({
+    provider: "google",
+    options: {
+      redirectTo: `${window.location.origin}/auth/callback`,
+    },
+  });
+};
+
 
   return (
     <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-slate-950 text-slate-100">
